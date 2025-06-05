@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Laundry"
+        tools:targetApi="31">
+        <activity
+            android:name=".data_tambahan_item"
+            android:exported="false" />
+        <activity
+            android:name=".pilihlayanan"
+            android:exported="false" />
+        <activity
+            android:name=".pilihpelanggan"
+            android:exported="false" />
+        <activity
+            android:name=".pembayaran_akhir"
+            android:exported="false" />
+        <activity
+            android:name=".konfirmasidata"
+            android:exported="false" />
+        <activity
+            android:name=".transaksi"
+            android:exported="false" />
+        <activity
+            android:name=".tambahan.data_tambahan"
+            android:exported="false" />
+        <activity
+            android:name=".tambahan.Tambahan"
+            android:exported="false" />
+        <activity
+            android:name=".cabang.tambah_cabang"
+            android:exported="false" />
+        <activity
+            android:name=".cabang.data_cabang"
+            android:exported="false" />
+        <activity
+            android:name=".layanan.data_layanan"
+            android:exported="false" />
+        <activity
+            android:name=".layanan.tambah_layanan"
+            android:exported="false" />
+        <activity
+            android:name=".pegawai.tambahpegawai"
+            android:exported="false"/>
+
+        <activity
+            android:name=".pelanggan.datapelanggan"
+            android:exported="false" />
+        <activity
+            android:name=".pegawai.data_pegawai"
+            android:exported="false" />
+        <activity
+            android:name=".pelanggan.TambahPelanggan"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

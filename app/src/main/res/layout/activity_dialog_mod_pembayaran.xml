@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:id="@+id/dialogmodpembayaran">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/tvJudul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Pembayaran"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tvSubjudul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/PilihMetodePembayaran"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Tombol Metode Pembayaran -->
+        <Button
+            android:id="@+id/btnBayarNanti"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="@string/BayarNanti"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#F44336" />
+
+        <Button
+            android:id="@+id/btnTunai"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="@string/Tunai"
+            android:backgroundTint="#FFEB3B"
+            android:textColor="#000000"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnQRIS"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="QRIS"
+            android:backgroundTint="#FF9800"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnDANA"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="DANA"
+            android:backgroundTint="#03A9F4"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnGoPay"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="GoPay"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnOVO"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="OVO"
+            android:backgroundTint="#673AB7"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/btnBatal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Batal"
+            android:textColor="#000000"
+            android:layout_gravity="end" />
+    </LinearLayout>
+</ScrollView>

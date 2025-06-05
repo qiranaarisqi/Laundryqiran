@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewPa"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toTopOf="@id/nsvpembayaranakhir"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Nama -->
+            <TextView
+                app:layout_constraintBottom_toTopOf="@id/alamatpa"
+                android:id="@+id/namapembayaranakhir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aisyah Laundry"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Alamat -->
+            <TextView
+                app:layout_constraintBottom_toTopOf="@id/idtransaksilinear"
+                android:id="@+id/alamatpa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Solo"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/namapembayaranakhir"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="4dp" />
+
+            <!-- Fungsi Baris -->
+            <!-- Fungsi ini digunakan berulang, hanya ID dan isi yang berubah -->
+            <!-- Setiap baris terdiri dari dua TextView dalam LinearLayout -->
+
+            <!-- ID Transaksi -->
+            <LinearLayout
+                android:id="@+id/idtransaksilinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp"
+                app:layout_constraintBottom_toTopOf="@id/tanggallinear"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/alamatpa">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="8dp"
+                    android:textColor="@color/black"
+                    android:text="id transaksi"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/idpembayaranakhir"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingEnd="8dp"
+                    android:text="ID12345"
+                    android:textColor="@color/black"
+                    android:textAlignment="viewEnd"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- Tanggal -->
+            <LinearLayout
+                android:id="@+id/tanggallinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@id/Pesananlinear"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/idtransaksilinear">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="8dp"
+                    android:textColor="@color/black"
+                    android:text="Tanggal"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/waktupembayaranPA"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingEnd="8dp"
+                    android:textColor="@color/black"
+                    android:text="07:47:17"
+                    android:textAlignment="viewEnd"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- Pesanan -->
+            <LinearLayout
+                android:id="@+id/Pesananlinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@id/Karyawanlinear"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tanggallinear">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:paddingStart="8dp"
+                    android:text="Pesanan"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/pesananpembayaranakhir"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingEnd="8dp"
+                    android:text="Cuci Kering"
+                    android:textColor="@color/black"
+                    android:textAlignment="viewEnd"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- Karyawan -->
+            <LinearLayout
+                android:id="@+id/Karyawanlinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@id/view1"
+                android:layout_marginTop="8dp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Pesananlinear">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="8dp"
+                    android:text="Karyawan"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/karyawanpembayaranakhir"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingEnd="8dp"
+                    android:textColor="@color/black"
+                    android:text="Admin"
+                    android:textAlignment="viewEnd"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- Garis Pembatas -->
+            <View
+                android:id="@+id/view1"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:backgroundTint="@color/black"
+                android:layout_marginTop="12dp"
+                android:background="@android:color/black"
+                app:layout_constraintBottom_toTopOf="@id/layananlinear"
+                app:layout_constraintTop_toBottomOf="@id/Karyawanlinear"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Layanan -->
+            <LinearLayout
+                android:id="@+id/layananlinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/view2"
+                app:layout_constraintTop_toBottomOf="@id/view1">
+
+                <TextView
+                    android:id="@+id/namalayananPA"
+                    android:layout_width="0dp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="8dp"
+                    android:textColor="@color/black"
+                    android:text="@string/Layanan"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/hargalayananPA"
+                    android:layout_width="0dp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingEnd="8dp"
+                    android:text="Rp10.000"
+                    android:textColor="@color/black"
+                    android:textAlignment="viewEnd"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <!-- Garis Bawah -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:backgroundTint="@color/black"
+                android:layout_marginTop="12dp"
+                android:background="@android:color/black"
+                android:id="@+id/view2"
+                app:layout_constraintBottom_toTopOf="@id/rincian"
+                app:layout_constraintTop_toBottomOf="@id/layananlinear"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+            <TextView
+                android:id="@+id/rincian"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RincianTambahan"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"
+                android:paddingStart="8dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view2"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsvpembayaranakhir"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/cvBawah"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardViewPa">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvpembayaranakhir"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            tools:listitem="@layout/card_konfirmasi_data_tambahan"/>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvBawah"
+        android:backgroundTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nsvpembayaranakhir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+
+                android:background="@android:color/black"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/subtotallinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/totallinear"
+                app:layout_constraintTop_toBottomOf="@id/view3">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="8dp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="5dp"
+                    android:text="subtotaltambahan"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/subtotal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingEnd="8dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Rp5000"
+                    android:textColor="@color/black"
+                    android:textAlignment="viewEnd"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/totallinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                app:layout_constraintBottom_toTopOf="@id/buttonlinear"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/subtotallinear">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"
+                    android:textColor="@color/black"
+                    android:paddingStart="8dp"
+                    android:text="totalbayar"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/subtotalharga"
+                    android:layout_width="0dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingEnd="8dp"
+                    android:text="Rp5000"
+                    android:textAlignment="viewEnd"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:background="@android:color/black"
+                android:layout_marginTop="5dp"
+                app:layout_constraintBottom_toTopOf="@id/buttonlinear"
+                app:layout_constraintTop_toBottomOf="@id/totallinear"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/buttonlinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view4">
+
+                <Button
+                    android:id="@+id/kirimWA"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="KirimWhatsApp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="30dp"
+                    android:backgroundTint="@color/Button"
+                    android:textColor="@color/ButtonText"
+                    android:layout_weight="1"/>
+                <Button
+                    android:id="@+id/cetak"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Cetak"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginEnd="5dp"
+                    android:backgroundTint="@color/Button"
+                    android:textColor="@color/ButtonText"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="5dp"
+    android:id="@+id/cvCabang"
+    android:backgroundTint="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header ID Layanan -->
+        <TextView
+            android:id="@+id/tv_id_cabang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ID Cabang"
+            android:textColor="@android:color/white"
+            android:background="#A01D55"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+        <!-- Nama Layanan -->
+        <TextView
+            android:id="@+id/tv_nama_cabang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nama Cabang"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingStart="10dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/black"/>
+
+        <!-- Harga -->
+        <TextView
+            android:id="@+id/tv_alamat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alamat"
+            android:textSize="16sp"
+            android:paddingStart="10dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@android:color/darker_gray"/>
+
+        <!-- Nama Cabang -->
+        <TextView
+            android:id="@+id/tv_telepon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Telepon"
+            android:textSize="16sp"
+            android:paddingStart="10dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@android:color/darker_gray"/>
+
+        <TextView
+            android:id="@+id/tv_layanan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Layanan"
+            android:textSize="16sp"
+            android:paddingStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@android:color/darker_gray"/>
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="2"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp">
+
+            <Button
+                android:id="@+id/bt_hubungicabang_tambahan"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cardpel_hubungi"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:backgroundTint="#133E87"
+                />
+            <Button
+                android:id="@+id/bt_lihatcabang_tambahan"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cardpel_lihat"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:backgroundTint="@color/black"
+                />
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

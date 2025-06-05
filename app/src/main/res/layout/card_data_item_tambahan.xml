@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="5dp"
+    android:id="@+id/cv_card_item_tambahan"
+    android:backgroundTint="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <!-- Header ID Layanan -->
+        <TextView
+            android:id="@+id/tv_id_layanantambahan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ID Layanan"
+            android:textColor="@color/black"
+            android:background="#A01D55"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+        <!-- Nama Layanan -->
+        <TextView
+            android:id="@+id/tv_nama_layanantambahan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/NamaLayanan"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:paddingStart="10dp"
+            android:textColor="@color/black"/>
+
+        <!-- Harga -->
+        <TextView
+            android:id="@+id/tv_hargalayanantambahan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Harga"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingStart="10dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
