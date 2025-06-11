@@ -85,7 +85,10 @@ class pilihlayanan : AppCompatActivity() {
                             layananList.add(pelanggan)
                         }
                     }
-                    rvPilihLayanan.adapter = adapter_pilih_layanan(layananList)
+                    // Cek apakah ini pemilihan tambahan atau layanan utama
+                    val isTambahan = intent.getBooleanExtra("isTambahan", false)
+                    rvPilihLayanan.adapter = adapter_pilih_layanan(layananList, isTambahan)
+
                     tvKosong.visibility = View.GONE
                 } else {
                     tvKosong.visibility = View.VISIBLE

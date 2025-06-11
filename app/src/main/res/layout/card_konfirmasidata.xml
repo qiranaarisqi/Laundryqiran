@@ -3,14 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cvKonvirmasidata_tambahan"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
     app:cardCornerRadius="15dp"
-  >
+    app:cardElevation="4dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -19,42 +21,40 @@
 
             <TextView
                 android:id="@+id/idKDtambahan"
-                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="id"
+                android:text="ID Tambahan"
+                android:textColor="@color/black"
                 android:paddingStart="10dp"
                 android:gravity="center_vertical" />
         </androidx.cardview.widget.CardView>
 
-        <!-- Baris konten -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp">
+            android:paddingTop="8dp">
 
-            <!-- Nama layanan -->
             <TextView
                 android:id="@+id/tvnamatambahanKD"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:text="@string/NamaLayanan"
-                android:textColor="@color/black" />
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"
+                android:text="Nama Tambahan"
+                android:textColor="@color/black"
+                android:maxLines="1"
+                android:ellipsize="end"/>
 
-            <!-- Harga layanan -->
             <TextView
                 android:id="@+id/tvhargatambahanKD"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="bottom"
-                android:text="@string/Harga"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:text="Harga"
                 android:textColor="@color/black"
-                android:layout_marginBottom="5dp" />
+                android:gravity="end"
+                android:maxLines="1"
+                android:ellipsize="end"/>
         </LinearLayout>
 
     </LinearLayout>

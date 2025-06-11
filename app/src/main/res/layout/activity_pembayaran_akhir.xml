@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/main"
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.cardview.widget.CardView
@@ -277,7 +278,7 @@
             android:id="@+id/rvpembayaranakhir"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            tools:listitem="@layout/card_konfirmasi_data_tambahan"/>
+            tools:listitem="@layout/card_data_itemlayanantambahan"/>
     </androidx.core.widget.NestedScrollView>
 
     <androidx.cardview.widget.CardView
@@ -403,8 +404,8 @@
                     android:layout_marginEnd="5dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginBottom="30dp"
-                    android:backgroundTint="@color/Button"
-                    android:textColor="@color/ButtonText"
+                    android:backgroundTint="@color/material_dynamic_neutral_variant50"
+                    android:textColor="@color/black"
                     android:layout_weight="1"/>
                 <Button
                     android:id="@+id/cetak"
@@ -414,8 +415,8 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginBottom="30dp"
                     android:layout_marginEnd="5dp"
-                    android:backgroundTint="@color/Button"
-                    android:textColor="@color/ButtonText"
+                    android:backgroundTint="@color/material_dynamic_neutral_variant50"
+                    android:textColor="@color/black"
                     android:layout_weight="1"/>
             </LinearLayout>
 

@@ -10,9 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.qiranarisqi.laundry.modeldata.modellayanan
 import com.qiranarisqi.laundry.R
+import com.qiranarisqi.laundry.modeldata.modeltambahan
 
 class adapter_konfirmasi (
-    private val listlayanan: ArrayList<modellayanan>):
+    private val listlayanan: ArrayList<modeltambahan>):
         RecyclerView.Adapter<adapter_konfirmasi.ViewHolder>(){
 
     override fun onCreateViewHolder(
@@ -20,16 +21,15 @@ class adapter_konfirmasi (
         viewType: Int
     ): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.card_data_layanan, parent, false)
+            .inflate(R.layout.card_konfirmasidata, parent, false)
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: adapter_konfirmasi.ViewHolder, position: Int) {
         val item = listlayanan[position]
-        holder.idlayanan.text = item.idlayanan ?: "-"
-        holder.namalayanan.text = item.namalayanan
-        holder.harga.text = item.harga
-        holder.namacabang.text = item.namacabang
+        holder.idlayanan.text = item.idtambahan ?: "-"
+        holder.namalayanan.text = item.namatambahan
+        holder.harga.text = item.hargatambahan
 
         holder.card_data_layanan.setOnClickListener(){
 
@@ -40,11 +40,10 @@ class adapter_konfirmasi (
         return listlayanan.size
     }
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val card_data_layanan =  itemView.findViewById<View>(R.id.cvLayanan)
-        val idlayanan =  itemView.findViewById<TextView>(R.id.tv_id_layanan)
-        val namalayanan =  itemView.findViewById<TextView>(R.id.tv_nama_layanan)
-        val harga =  itemView.findViewById<TextView>(R.id.tv_harga)
-        val namacabang =  itemView.findViewById<TextView>(R.id.tv_nama_cabang)
+        val card_data_layanan =  itemView.findViewById<View>(R.id.cvKonvirmasidata_tambahan)
+        val idlayanan =  itemView.findViewById<TextView>(R.id.idKDtambahan)
+        val namalayanan =  itemView.findViewById<TextView>(R.id.tvnamatambahanKD)
+        val harga =  itemView.findViewById<TextView>(R.id.tvhargatambahanKD)
     }
         }
 

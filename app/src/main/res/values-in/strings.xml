@@ -70,4 +70,5 @@
     <string name="PilihMetodePembayaran">"Pilih Metode Pembayaran "</string>
     <string name="BayarNanti">"Bayar Nanti "</string>
     <string name="Tunai">"Tunai "</string>
+    <string name="BerhasilDicetak">"Berhasil Dicetak "</string>
 </resources>

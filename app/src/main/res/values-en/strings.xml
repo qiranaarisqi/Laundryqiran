@@ -70,4 +70,5 @@
     <string name="PilihMetodePembayaran">Choose Payment Method</string>
     <string name="BayarNanti">Pay Later</string>
     <string name="Tunai">Cash</string>
+    <string name="BerhasilDicetak">Succes</string>
 </resources>

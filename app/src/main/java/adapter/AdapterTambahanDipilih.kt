@@ -11,12 +11,13 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.DatabaseReference
 import com.qiranarisqi.laundry.R
+import com.qiranarisqi.laundry.modeldata.modeltambahan
 import com.qiranarisqi.laundry.modeldata.modeltransaksitambahan
 import java.text.NumberFormat
 import java.util.Locale
 
 class AdapterTambahanDipilih(
-    private val ListTambahan: MutableList<modeltransaksitambahan>,
+    private val ListTambahan:MutableList<modeltransaksitambahan>,
     private val onItemRemoved: (() -> Unit)? = null
 ) : RecyclerView.Adapter<AdapterTambahanDipilih.Viewholder>() {
 
@@ -33,10 +34,13 @@ class AdapterTambahanDipilih(
     override fun onBindViewHolder(holder: Viewholder, position: Int) {
         val nomor = position + 1
         val item = ListTambahan[position]
+
         holder.tvid.text = "[$nomor]"
         holder.tvNama.text = item.nama
-        val hargaDouble = item.harga ?: 0
-        holder.harga.text = "Harga = ${formatRupiah(hargaDouble)}"
+
+        val harga = item.harga?.toIntOrNull() ?: 0
+        holder.harga.text = "Harga = ${formatRupiah(harga)}"
+
 
         holder.cvCard.setOnClickListener {
             val intent = Intent()
@@ -60,11 +64,13 @@ class AdapterTambahanDipilih(
     }
 
     override fun getItemCount(): Int = ListTambahan.size
-
-    private fun formatRupiah(amount: Int): String {
+    private fun formatRupiah(number: Int): String {
         val format = NumberFormat.getCurrencyInstance(Locale("in", "ID"))
-        return format.format(amount)
+        format.maximumFractionDigits = 0
+        return format.format(number)
     }
+
+
 
     class Viewholder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val cvCard: View = itemView.findViewById(R.id.cv_card_item_tambahan2)

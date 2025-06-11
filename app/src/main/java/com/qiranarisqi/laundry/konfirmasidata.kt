@@ -19,7 +19,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-class konfirmasidata : AppCompatActivity()  {
+class konfirmasidata : AppCompatActivity() {
 
     private var nama: String? = null
     private var noHP: String? = null
@@ -39,7 +39,7 @@ class konfirmasidata : AppCompatActivity()  {
         namaLayanan = intent.getStringExtra("namaLayanan")?.substringAfter(": ")?.trim()
         hargaLayanan = intent.getIntExtra("hargaLayanan", 0)
 
-        // Perbaikan untuk getParcelableArrayListExtra dengan handling deprecated method
+        // Ambil layanan tambahan (Parcelable)
         tambahanList = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             intent.getParcelableArrayListExtra("tambahanList", modeltambahan::class.java) ?: arrayListOf()
         } else {
@@ -47,29 +47,35 @@ class konfirmasidata : AppCompatActivity()  {
             intent.getParcelableArrayListExtra<modeltambahan>("tambahanList") ?: arrayListOf()
         }
 
-        // Tampilkan data
+        // Tampilkan data ke UI
         findViewById<TextView>(R.id.namakonfirmasi_data).text = nama
         findViewById<TextView>(R.id.nohpkonfirmasi_data).text = noHP
         findViewById<TextView>(R.id.layanankonfirmasi_data).text = namaLayanan
         findViewById<TextView>(R.id.hargakonfirmasi_data).text = formatRupiah(hargaLayanan)
 
         // Hitung total tambahan dan total bayar
-        totalTambahan = tambahanList.sumOf { it.hargatambahan ?: 0 }
+        totalTambahan = tambahanList.sumOf {
+            val hargaStr = it.hargatambahan ?: "0"
+            val cleaned = hargaStr.replace("[^\\d]".toRegex(), "")
+            cleaned.toIntOrNull() ?: 0
+        }
+
         totalBayar = hargaLayanan + totalTambahan
 
-        val tvTotalBayar = findViewById<TextView>(R.id.tvTotalBayar)
-        tvTotalBayar.text = getString(R.string.Totalbayar, formatRupiah(totalBayar))
+        // Tampilkan total bayar
+        findViewById<TextView>(R.id.tvTotalBayar).text = getString(R.string.Totalbayar, formatRupiah(totalBayar))
 
         // Setup RecyclerView
         val rv = findViewById<RecyclerView>(R.id.rvKonfirmasiData)
         rv.layoutManager = LinearLayoutManager(this)
         rv.adapter = adapter_konfirmasi(tambahanList)
 
-        // Tombol
+        // Tombol batal
         findViewById<Button>(R.id.btbatalKD).setOnClickListener {
             finish()
         }
 
+        // Tombol pembayaran
         findViewById<Button>(R.id.btpembayaranKD).setOnClickListener {
             showMetodePembayaranDialog()
         }
@@ -114,11 +120,10 @@ class konfirmasidata : AppCompatActivity()  {
 
         val formatterTanggal = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
         val formatterWaktu = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
+        val formatterID = SimpleDateFormat("yyyyMMdd-HHmmss", Locale.getDefault())
 
         val tanggalPembayaran = formatterTanggal.format(waktuSekarang)
         val waktuPembayaran = formatterWaktu.format(waktuSekarang)
-
-        val formatterID = SimpleDateFormat("yyyyMMdd-HHmmss", Locale.getDefault())
         val idTransaksi = "TRX${formatterID.format(waktuSekarang)}"
 
         val intent = Intent(this, pembayaran_akhir::class.java).apply {
@@ -134,6 +139,7 @@ class konfirmasidata : AppCompatActivity()  {
             putExtra("waktuPembayaran", waktuPembayaran)
             putParcelableArrayListExtra("layananTambahanList", tambahanList)
         }
+
         startActivity(intent)
     }
 
