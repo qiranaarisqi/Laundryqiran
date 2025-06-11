@@ -42,9 +42,7 @@ class pembayaran_akhir : AppCompatActivity() {
     // Deklarasi TextViews dan Buttons
     private lateinit var tvTanggal: TextView
     private lateinit var tvIdTransaksi: TextView
-    private lateinit var tvNamaPelanggan: TextView // Telah diinisialisasi
-    private lateinit var tvNoHP: TextView         // Telah diinisialisasi
-    private lateinit var tvStatus: TextView
+    private lateinit var tvNamaPelanggan: TextView // Telah diinisialisasi// Telah diinisialisasi
     private lateinit var tvLayananUtama: TextView
     private lateinit var tvHargaLayanan: TextView
     private lateinit var rvTambahan: RecyclerView
@@ -78,6 +76,7 @@ class pembayaran_akhir : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_pembayaran_akhir)
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -154,8 +153,9 @@ class pembayaran_akhir : AppCompatActivity() {
     private fun initializeViews() {
         try {
             tvTanggal = findViewById(R.id.waktupembayaranPA)
+            tvNamaPelanggan = findViewById(R.id.tvNamaPelanggan)
             tvIdTransaksi = findViewById(R.id.idpembayaranakhir)
-            tvLayananUtama = findViewById(R.id.namalayananPA)
+            tvLayananUtama = findViewById(R.id.pesananpembayaranakhir)
             tvHargaLayanan = findViewById(R.id.hargalayananPA)
             rvTambahan = findViewById(R.id.rvpembayaranakhir) // Pastikan ID ini ada di layout XML
             tvSubtotalTambahan = findViewById(R.id.subtotal)
@@ -312,8 +312,7 @@ class pembayaran_akhir : AppCompatActivity() {
         tvTanggal.text = "$tanggalPembayaran $waktuPembayaran"
         tvIdTransaksi.text = idTransaksi
         tvNamaPelanggan.text = nama // Menampilkan nama pelanggan di UI
-        tvNoHP.text = if (noHPPelanggan.isNotEmpty()) noHPPelanggan else "Tidak tersedia" // Menampilkan nomor HP di UI
-        tvStatus.text = determinePaymentStatus("Lunas", metodePembayaran) // Asumsi lunas setelah pembayaran
+
 
         tvLayananUtama.text = layanan
         tvHargaLayanan.text = formatCurrency(hargaLayananInt)
@@ -395,19 +394,13 @@ class pembayaran_akhir : AppCompatActivity() {
     private fun buildPrintMessage(): String {
         return buildString {
             append("\n")
-            append("Laundry Elnoah\n")
+            append("Laundry Qirana\n")
             append("Alamat Laundry Anda\n") // Ganti dengan alamat laundry yang sebenarnya
             append("==============================\n")
             append("ID Transaksi: ${tvIdTransaksi.text}\n")
             append("Tanggal: ${tvTanggal.text}\n")
             append("Pelanggan: ${tvNamaPelanggan.text}\n") // Menggunakan tvNamaPelanggan
 
-            if (noHPPelanggan.isNotEmpty() && noHPPelanggan != "Tidak tersedia") {
-                append("No. HP: ${tvNoHP.text}\n") // Menggunakan tvNoHP
-            }
-
-            append("Status: ${tvStatus.text}\n")
-            append("------------------------------\n")
 
             val namaUtama = tvLayananUtama.text.toString().take(20).padEnd(20)
             val hargaUtama = tvHargaLayanan.text.toString().padStart(12)
@@ -439,7 +432,6 @@ class pembayaran_akhir : AppCompatActivity() {
             append("*Berikut rincian laundry Anda:*\n")
             append("• ID Transaksi: ${tvIdTransaksi.text}\n")
             append("• Tanggal: ${tvTanggal.text}\n")
-            append("• Status: ${tvStatus.text}\n")
             append("\n")
             append("*Layanan Utama:*\n")
             append("• ${tvLayananUtama.text} - ${tvHargaLayanan.text}\n\n")
